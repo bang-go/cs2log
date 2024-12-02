@@ -27,7 +27,7 @@ func parseWithPatterns(validPattern string, line string, attrArr evt.EventList) 
 	}
 	location, _ := time.LoadLocation("Asia/Shanghai") // 使用上海时区
 	// 解析日志的时间
-	ti, err := time.ParseInLocation("01/02/2006 - 15:04:05", result[1], location)
+	ti, err := time.ParseInLocation("01/02/2006 - 15:04:05.000", result[1], location)
 	// if parsing the date failed, return error
 	if err != nil {
 		return nil, err

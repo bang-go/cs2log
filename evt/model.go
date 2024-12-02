@@ -67,6 +67,12 @@ type Unknown struct {
 	Raw string `json:"raw"`
 }
 
+// LoadingMap 加载地图
+type LoadingMap struct {
+	Meta
+	Map string `json:"map"`
+}
+
 // ServerMessage 服务器消息
 type ServerMessage struct {
 	Meta
@@ -97,6 +103,12 @@ type WorldReloadedStart struct {
 	Meta
 	Map string `json:"map"`
 }
+
+// WorldWarmupStart 热身开始
+type WorldWarmupStart struct{ Meta }
+
+// WorldWarmupEnd 热身结束
+type WorldWarmupEnd struct{ Meta }
 
 // WorldRoundStart 回合开始
 type WorldRoundStart struct{ Meta }

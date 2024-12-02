@@ -19,6 +19,14 @@ func NewUnknown(ti time.Time, r []string) LogMessage {
 		Raw:  r[1],
 	}
 }
+
+func NewLoadingMap(ty string, ti time.Time, r []string) LogMessage {
+	return LoadingMap{
+		Meta: NewMeta(ti, ty),
+		Map:  r[1],
+	}
+}
+
 func NewServerMessage(ty string, ti time.Time, r []string) LogMessage {
 	return ServerMessage{
 		Meta: NewMeta(ti, ty),
@@ -46,6 +54,13 @@ func NewWorldReloadedStart(ty string, ti time.Time, r []string) LogMessage {
 
 func NewWorldRoundStart(ty string, ti time.Time, r []string) LogMessage {
 	return WorldRoundStart{NewMeta(ti, ty)}
+}
+
+func NewWorldWarmupStart(ty string, ti time.Time, r []string) LogMessage {
+	return WorldWarmupStart{NewMeta(ti, ty)}
+}
+func NewWorldWarmupEnd(ty string, ti time.Time, r []string) LogMessage {
+	return WorldWarmupEnd{NewMeta(ti, ty)}
 }
 
 func NewWorldRoundRestart(ty string, ti time.Time, r []string) LogMessage {

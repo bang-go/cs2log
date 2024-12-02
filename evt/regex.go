@@ -10,6 +10,8 @@ const (
 
 // 事件数据正则表达式
 const (
+	//LoadingMapPattern 加载地图
+	LoadingMapPattern = `Loading map "(\w+)"`
 	// ServerMessagePattern 服务器信息
 	ServerMessagePattern = `server_message: "(\w+)"`
 	// FreezeTimeStartPattern 冻结时间开始
@@ -18,6 +20,10 @@ const (
 	WorldMatchStartPattern = `World triggered "Match_Start" on "(\w+)"`
 	// WorldMatchReloadedPattern 比赛回档
 	WorldMatchReloadedPattern = `World triggered "Match_Reloaded" on "(\w+)"`
+	//WorldWarmupStartPattern 热身开始
+	WorldWarmupStartPattern = `World triggered "Warmup_Start"`
+	//WorldWarmupEndPattern 热身结束
+	WorldWarmupEndPattern = `World triggered "Warmup_End"`
 	// WorldRoundStartPattern 回合开始
 	WorldRoundStartPattern = `World triggered "Round_Start"`
 	// WorldRoundRestartPattern 回合重启
@@ -101,6 +107,7 @@ const (
 	// RconEventPattern regular expression
 	RconEventPattern = `rcon from "(.*):(\d+)": command "(.*)"`
 
+	//TODO:  World triggered "SFUI_Notice_Round_Draw" (CT "0") (T "1")
 	// TODO // VoteStartPattern = `Vote started "StartTimeOut " from #2 "416<16><STEAM_1:1:55894410><TERRORIST><Area 4>"`
 	// TODO // VoteCastPattern = `Vote cast "StartTimeOut " from #2 "416<16><STEAM_1:1:55894410><TERRORIST><Area 4>" option0`
 	// TODO // VoteSuccessPattern = `Vote cast "StartTimeOut " from #2 "416<16><STEAM_1:1:55894410><TERRORIST><Area 4>`

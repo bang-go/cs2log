@@ -5,6 +5,7 @@ import "time"
 // 事件数据类型
 const (
 	UnknownType               = `unknown`
+	LoadingMapType            = `loadingMap`
 	ServerMessageType         = `serverMessage`
 	ServerCvarType            = `serverCvar`
 	RconEventType             = `RconEvent`
@@ -12,6 +13,8 @@ const (
 	WorldMatchStartType       = `worldMatchStart`
 	WorldMatchReloadedType    = `worldReloadedStart`
 	WorldRoundStartType       = `worldRoundStart`
+	WorldWarmupStartType      = `worldWarmupStart`
+	WorldWarmupEndType        = `worldWarmupEnd`
 	WorldRoundRestartType     = `worldRoundRestart`
 	WorldRoundEndType         = `worldRoundEnd`
 	WorldGameCommencingType   = `worldGameCommencing`
@@ -69,6 +72,11 @@ func GetEventRegister() EventList {
 // 所有注册的日志类型
 var registerEventList = []Event{
 	{
+		TypeName: LoadingMapType,
+		Pattern:  LoadingMapPattern,
+		Func:     NewLoadingMap,
+	},
+	{
 		TypeName: ServerMessageType,
 		Pattern:  ServerMessagePattern,
 		Func:     NewServerMessage,
@@ -98,6 +106,16 @@ var registerEventList = []Event{
 		TypeName: WorldMatchReloadedType,
 		Pattern:  WorldMatchReloadedPattern,
 		Func:     NewWorldReloadedStart,
+	},
+	{
+		TypeName: WorldWarmupStartType,
+		Pattern:  WorldWarmupStartPattern,
+		Func:     NewWorldWarmupStart,
+	},
+	{
+		TypeName: WorldWarmupEndType,
+		Pattern:  WorldWarmupEndPattern,
+		Func:     NewWorldWarmupEnd,
 	},
 	{
 		TypeName: WorldRoundStartType,
