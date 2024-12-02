@@ -53,53 +53,53 @@ const (
 	// TeamNoticePattern 队伍比分结果
 	TeamNoticePattern = `Team "(CT|TERRORIST)" triggered "(\w+)" \(CT "(\d+)"\) \(T "(\d+)"\)`
 	// PlayerConnectedPattern 选手链接
-	PlayerConnectedPattern = `"(.+)<(\d+)><([\w:]+)><>" connected, address "(.*)"`
+	PlayerConnectedPattern = `"(.+)<(\d+)><(.+)><>" connected, address "(.*)"`
 	// PlayerDisconnectedPattern 选手断开链接
-	PlayerDisconnectedPattern = `"(.+)<(\d+)><([\w:]+)><(TERRORIST|CT|Unassigned|)>" disconnected \(reason "(.+)"\)`
+	PlayerDisconnectedPattern = `"(.+)<(\d+)><(.+)><(TERRORIST|CT|Unassigned|)>" disconnected \(reason "(.+)"\)`
 	// PlayerEnteredPattern 选手加入游戏
-	PlayerEnteredPattern = `"(.+)<(\d+)><([\w:]+)><>" entered the game`
+	PlayerEnteredPattern = `"(.+)<(\d+)><(.+)><>" entered the game`
 	// PlayerBannedPattern 选手被banned
-	PlayerBannedPattern = `Banid: "(.+)<(\d+)><([\w:]+)><\w*>" was banned "([\w. ]+)" by "(\w+)"`
+	PlayerBannedPattern = `Banid: "(.+)<(\d+)><(.+)><\w*>" was banned "([\w. ]+)" by "(\w+)"`
 	// PlayerSwitchedPattern 选手换边
-	PlayerSwitchedPattern = `"(.+)<(\d+)><([\w:]+)>" switched from team <(Unassigned|Spectator|TERRORIST|CT)> to <(Unassigned|Spectator|TERRORIST|CT)>`
+	PlayerSwitchedPattern = `"(.+)<(\d+)><(.+)>" switched from team <(Unassigned|Spectator|TERRORIST|CT)> to <(Unassigned|Spectator|TERRORIST|CT)>`
 	// PlayerSayPattern 选手交流
-	PlayerSayPattern = `"(.+)<(\d+)><([\w:]+)><(TERRORIST|CT)>" say(_team)? "(.*)"`
+	PlayerSayPattern = `"(.+)<(\d+)><(.+)><(TERRORIST|CT)>" say(_team)? "(.*)"`
 	// PlayerPurchasePattern 选手购买物品
-	PlayerPurchasePattern = `"(.+)<(\d+)><([\w:]+)><(TERRORIST|CT)>" purchased "(\w+)"`
+	PlayerPurchasePattern = `"(.+)<(\d+)><(.+)><(TERRORIST|CT)>" purchased "(\w+)"`
 	// PlayerKillPattern 选手击杀
-	PlayerKillPattern = `"(.+)<(\d+)><([\w:]+)><(TERRORIST|CT)>" \[(-?\d+) (-?\d+) (-?\d+)\] killed "(.+)<(\d+)><([\w:]+)><(TERRORIST|CT)>" \[(-?\d+) (-?\d+) (-?\d+)\] with "(\w+)" ?(\(?(headshot|penetrated|throughsmoke|headshot penetrated|headshot throughsmoke)?\))?`
+	PlayerKillPattern = `"(.+)<(\d+)><(.+)><(TERRORIST|CT)>" \[(-?\d+) (-?\d+) (-?\d+)\] killed "(.+)<(\d+)><(.+)><(TERRORIST|CT)>" \[(-?\d+) (-?\d+) (-?\d+)\] with "(\w+)" ?(\(?(headshot|penetrated|throughsmoke|headshot penetrated|headshot throughsmoke)?\))?`
 	// PlayerKillAssistPattern 选手助攻击杀（assisted/flash-assisted）
-	PlayerKillAssistPattern = `"(.+)<(\d+)><([\w:]+)><(TERRORIST|CT)>" (.+) killing "(.+)<(\d+)><([\w:]+)><(TERRORIST|CT)>"`
+	PlayerKillAssistPattern = `"(.+)<(\d+)><(.+)><(TERRORIST|CT)>" (.+) killing "(.+)<(\d+)><(.+)><(TERRORIST|CT)>"`
 	// PlayerAttackPattern 选手攻击
-	PlayerAttackPattern = `"(.+)<(\d+)><([\w:]+)><(TERRORIST|CT)>" \[(-?\d+) (-?\d+) (-?\d+)\] attacked "(.+)<(\d+)><([\w:]+)><(TERRORIST|CT)>" \[(-?\d+) (-?\d+) (-?\d+)\] with "(\w+)" \(damage "(\d+)"\) \(damage_armor "(\d+)"\) \(health "(\d+)"\) \(armor "(\d+)"\) \(hitgroup "([\w ]+)"\)`
+	PlayerAttackPattern = `"(.+)<(\d+)><(.+)><(TERRORIST|CT)>" \[(-?\d+) (-?\d+) (-?\d+)\] attacked "(.+)<(\d+)><(.+)><(TERRORIST|CT)>" \[(-?\d+) (-?\d+) (-?\d+)\] with "(\w+)" \(damage "(\d+)"\) \(damage_armor "(\d+)"\) \(health "(\d+)"\) \(armor "(\d+)"\) \(hitgroup "([\w ]+)"\)`
 	// PlayerKilledBombPattern 选手被炸弹击杀
-	PlayerKilledBombPattern = `"(.+)<(\d+)><([\w:]+)><(TERRORIST|CT)>" \[(-?\d+) (-?\d+) (-?\d+)\] was killed by the bomb\.`
+	PlayerKilledBombPattern = `"(.+)<(\d+)><(.+)><(TERRORIST|CT)>" \[(-?\d+) (-?\d+) (-?\d+)\] was killed by the bomb\.`
 	// PlayerKilledSuicidePattern 选手自杀
-	PlayerKilledSuicidePattern = `"(.+)<(\d+)><([\w:]+)><(TERRORIST|CT)>" \[(-?\d+) (-?\d+) (-?\d+)\] committed suicide with "(.*)"`
+	PlayerKilledSuicidePattern = `"(.+)<(\d+)><(.+)><(TERRORIST|CT)>" \[(-?\d+) (-?\d+) (-?\d+)\] committed suicide with "(.*)"`
 	// PlayerKillOtherPattern 选手击杀地图资源物
-	PlayerKillOtherPattern = `"(.+)<(\d+)><([\w:]+)><(TERRORIST|CT)>" \[(-?\d+) (-?\d+) (-?\d+)\] killed other "(.+)<(\d+)>" \[(-?\d+) (-?\d+) (-?\d+)\] with "(\w+)"`
+	PlayerKillOtherPattern = `"(.+)<(\d+)><(.+)><(TERRORIST|CT)>" \[(-?\d+) (-?\d+) (-?\d+)\] killed other "(.+)<(\d+)>" \[(-?\d+) (-?\d+) (-?\d+)\] with "(\w+)"`
 	// PlayerPickedUpPattern 选手捡起物品
-	PlayerPickedUpPattern = `"(.+)<(\d+)><([\w:]+)><(TERRORIST|CT)>" picked up "(\w+)"`
+	PlayerPickedUpPattern = `"(.+)<(\d+)><(.+)><(TERRORIST|CT)>" picked up "(\w+)"`
 	// PlayerDroppedPattern 选手丢掉物品
-	PlayerDroppedPattern = `"(.+)<(\d+)><([\w:]+)><(TERRORIST|CT|Unassigned)>" dropped "(\w+)"`
+	PlayerDroppedPattern = `"(.+)<(\d+)><(.+)><(TERRORIST|CT|Unassigned)>" dropped "(\w+)"`
 	// PlayerMoneyChangePattern 选手经济变化
-	PlayerMoneyChangePattern = `"(.+)<(\d+)><([\w:]+)><(TERRORIST|CT)>" money change (\d+)\+?(-?\d+) = \$(\d+)( \(tracked\))?( \(purchase: (\w+)\))?`
+	PlayerMoneyChangePattern = `"(.+)<(\d+)><(.+)><(TERRORIST|CT)>" money change (\d+)\+?(-?\d+) = \$(\d+)( \(tracked\))?( \(purchase: (\w+)\))?`
 	// PlayerBombGotPattern 选手获得炸弹
-	PlayerBombGotPattern = `"(.+)<(\d+)><([\w:]+)><(TERRORIST|CT)>" triggered "Got_The_Bomb"`
+	PlayerBombGotPattern = `"(.+)<(\d+)><(.+)><(TERRORIST|CT)>" triggered "Got_The_Bomb"`
 	// PlayerBombPlantedPattern 选手安放炸弹
-	PlayerBombPlantedPattern = `"(.+)<(\d+)><([\w:]+)><(TERRORIST|CT)>" triggered "Planted_The_Bomb" at bombsite (\w+)`
+	PlayerBombPlantedPattern = `"(.+)<(\d+)><(.+)><(TERRORIST|CT)>" triggered "Planted_The_Bomb" at bombsite (\w+)`
 	// PlayerBombDroppedPattern 选手丢掉炸弹
-	PlayerBombDroppedPattern = `"(.+)<(\d+)><([\w:]+)><(TERRORIST|CT)>" triggered "Dropped_The_Bomb"`
+	PlayerBombDroppedPattern = `"(.+)<(\d+)><(.+)><(TERRORIST|CT)>" triggered "Dropped_The_Bomb"`
 	// PlayerBombBeginDefusePattern 选手开始解除炸弹
-	PlayerBombBeginDefusePattern = `"(.+)<(\d+)><([\w:]+)><(TERRORIST|CT)>" triggered "Begin_Bomb_Defuse_With(out)?_Kit"`
+	PlayerBombBeginDefusePattern = `"(.+)<(\d+)><(.+)><(TERRORIST|CT)>" triggered "Begin_Bomb_Defuse_With(out)?_Kit"`
 	// PlayerBombDefusedPattern 选手成功解除炸弹
-	PlayerBombDefusedPattern = `"(.+)<(\d+)><([\w:]+)><(TERRORIST|CT)>" triggered "Defused_The_Bomb"`
+	PlayerBombDefusedPattern = `"(.+)<(\d+)><(.+)><(TERRORIST|CT)>" triggered "Defused_The_Bomb"`
 	// PlayerThrewPattern 选手扔投掷物
-	PlayerThrewPattern = `"(.+)<(\d+)><([\w:]+)><(TERRORIST|CT)>" threw (\w+) \[(-?\d+) (-?\d+) (-?\d+)\]( flashbang entindex (\d+))?\)?`
+	PlayerThrewPattern = `"(.+)<(\d+)><(.+)><(TERRORIST|CT)>" threw (\w+) \[(-?\d+) (-?\d+) (-?\d+)\]( flashbang entindex (\d+))?\)?`
 	// PlayerBlindedPattern 选手被闪光
-	PlayerBlindedPattern = `"(.+)<(\d+)><([\w:]+)><(TERRORIST|CT)>" blinded for ([\d.]+) by "(.+)<(\d+)><([\w:]+)><(TERRORIST|CT)>" from flashbang entindex (\d+)`
+	PlayerBlindedPattern = `"(.+)<(\d+)><(.+)><(TERRORIST|CT)>" blinded for ([\d.]+) by "(.+)<(\d+)><(.+)><(TERRORIST|CT)>" from flashbang entindex (\d+)`
 	// PlayerLeftBuyZonePattern 选手离开购买区域
-	PlayerLeftBuyZonePattern = `"(.+)<(\d+)><([\w:]+)><(TERRORIST|CT)>" left buyzone with \[(.*)\]`
+	PlayerLeftBuyZonePattern = `"(.+)<(\d+)><(.+)><(TERRORIST|CT)>" left buyzone with \[(.*)\]`
 	// ProjectileSpawnedPattern regular expression
 	ProjectileSpawnedPattern = `Molotov projectile spawned at (-?\d+\.\d+) (-?\d+\.\d+) (-?\d+\.\d+), velocity (-?\d+\.\d+) (-?\d+\.\d+) (-?\d+\.\d+)`
 	// ServerCvarPattern regular expression

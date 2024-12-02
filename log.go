@@ -2,19 +2,30 @@ package cs2log
 
 import (
 	"errors"
+	"fmt"
 	"github.com/bang-go/cs2log/evt"
 	"regexp"
 	"time"
 )
 
-// ParseLogLine 根据原始行log解析日志 log文件
-func ParseLogLine(line string) (evt.LogMessage, error) {
-	return parseWithPatterns(evt.LogLineValidPattern, line, evt.GetEventRegister())
-}
+const (
+	LogTypeFile = LogType(0) //文件
+	LogTypeHttp = LogType(1) //http
+)
 
-// ParseHttpLogLine 根据原始行log解析日志 http log文件
-func ParseHttpLogLine(line string) (evt.LogMessage, error) {
-	return parseWithPatterns(evt.HttpLineValidPattern, line, evt.GetEventRegister())
+type LogType int
+
+func ParseLogLine(t LogType, line string) (evt.LogMessage, error) {
+	var pattern string
+	switch t {
+	case LogTypeFile:
+		pattern = evt.LogLineValidPattern
+	case LogTypeHttp:
+		pattern = evt.HttpLineValidPattern
+	default:
+		return nil, errors.New(fmt.Sprintf("LogType %d not support", t))
+	}
+	return parseWithPatterns(pattern, line, evt.GetEventRegister())
 }
 
 // 通过正则表达式解析日志
