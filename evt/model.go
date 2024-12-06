@@ -67,6 +67,19 @@ type Unknown struct {
 	Raw string `json:"raw"`
 }
 
+// LogFileStarted 日志开始
+type LogFileStarted struct {
+	Meta
+	LogFile    string `json:"log_file"`
+	Game       string `json:"game"`
+	LogVersion string `json:"log_version"`
+}
+
+// LogFileClosed 日志关闭
+type LogFileClosed struct {
+	Meta
+}
+
 // LoadingMap 加载地图
 type LoadingMap struct {
 	Meta

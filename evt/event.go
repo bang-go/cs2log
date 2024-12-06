@@ -5,6 +5,8 @@ import "time"
 // 事件数据类型
 const (
 	UnknownType               = `unknown`
+	LogFileStartedType        = `logFileStarted`
+	LogFileClosedType         = `logFileClosed`
 	LoadingMapType            = `loadingMap`
 	ServerMessageType         = `serverMessage`
 	ServerCvarType            = `serverCvar`
@@ -71,6 +73,16 @@ func GetEventRegister() EventList {
 
 // 所有注册的日志类型
 var registerEventList = []Event{
+	{
+		TypeName: LogFileStartedType,
+		Pattern:  LogFileStartedPattern,
+		Func:     NewLogFileStarted,
+	},
+	{
+		TypeName: LogFileClosedType,
+		Pattern:  LogFileClosedPattern,
+		Func:     NewLogFileClosed,
+	},
 	{
 		TypeName: LoadingMapType,
 		Pattern:  LoadingMapPattern,

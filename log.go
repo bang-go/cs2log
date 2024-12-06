@@ -9,8 +9,8 @@ import (
 )
 
 const (
-	LogTypeFile = LogType(0) //文件
-	LogTypeHttp = LogType(1) //http
+	LogTypeFile LogType = iota //文件
+	LogTypeHttp                //http
 )
 
 type LogType int

@@ -20,6 +20,21 @@ func NewUnknown(ti time.Time, r []string) LogMessage {
 	}
 }
 
+func NewLogFileStarted(ty string, ti time.Time, r []string) LogMessage {
+	return LogFileStarted{
+		Meta:       NewMeta(ti, ty),
+		LogFile:    r[1],
+		Game:       r[2],
+		LogVersion: r[3],
+	}
+}
+
+func NewLogFileClosed(ty string, ti time.Time, r []string) LogMessage {
+	return LogFileStarted{
+		Meta: NewMeta(ti, ty),
+	}
+}
+
 func NewLoadingMap(ty string, ti time.Time, r []string) LogMessage {
 	return LoadingMap{
 		Meta: NewMeta(ti, ty),

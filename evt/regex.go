@@ -10,6 +10,9 @@ const (
 
 // 事件数据正则表达式
 const (
+	//LogFileStartedPattern Log file started log文件开始
+	LogFileStartedPattern = `Log file started (file "(.+)") (game "(\w+)") (version "(\w+)")`
+	LogFileClosedPattern  = `Log file closed`
 	//LoadingMapPattern 加载地图
 	LoadingMapPattern = `Loading map "(\w+)"`
 	// ServerMessagePattern 服务器信息
