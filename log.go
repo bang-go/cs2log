@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"github.com/bang-go/cs2log/evt"
+	"github.com/bang-go/util"
 	"regexp"
 	"time"
 )
@@ -36,9 +37,8 @@ func parseWithPatterns(validPattern string, line string, attrArr evt.EventList) 
 	if result == nil {
 		return nil, errors.New("日式格式有误")
 	}
-	location, _ := time.LoadLocation("Asia/Shanghai") // 使用上海时区
 	// 解析日志的时间
-	ti, err := time.ParseInLocation("01/02/2006 - 15:04:05.000", result[1], location)
+	ti, err := time.ParseInLocation("01/02/2006 - 15:04:05.000", result[1], util.TimeLocation())
 	// if parsing the date failed, return error
 	if err != nil {
 		return nil, err
