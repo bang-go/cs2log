@@ -58,7 +58,7 @@ const (
 	// PlayerConnectedPattern 选手链接
 	PlayerConnectedPattern = `"(.+)<(\d+)><(.+)><>" connected, address "(.*)"`
 	// PlayerDisconnectedPattern 选手断开链接
-	PlayerDisconnectedPattern = `"(.+)<(\d+)><(.+)><(TERRORIST|CT|Unassigned|)>" disconnected \(reason "(.+)"\)`
+	PlayerDisconnectedPattern = `"(.+)<(\d+)><(.+)><(TERRORIST|CT|Unassigned|Spectator)>" disconnected \(reason "(.+)"\)`
 	// PlayerEnteredPattern 选手加入游戏
 	PlayerEnteredPattern = `"(.+)<(\d+)><(.+)><>" entered the game`
 	// PlayerBannedPattern 选手被banned
