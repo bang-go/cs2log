@@ -329,3 +329,8 @@ var registerEventList = []Event{
 		Func:     NewWorldGameOver,
 	},
 }
+
+// AppendRegisterEvent 自定义附加注册事件
+func AppendRegisterEvent(e Event) {
+	registerEventList = append(registerEventList, e)
+}
